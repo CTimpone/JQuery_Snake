@@ -3,16 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>Snake</title>
+    <script src="../js/jquery-2.1.1.js"></script>
+    <script src="../js/snake.js"></script>
+    <script src="../js/snake-view.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/snake.css">
   </head>
   <body>
-    <script src="../js/jquery-2.1.1.js"></script>
-    <!-- Whackjobs at GithubPages don't understand symlinks... -->
-    <script src="../js/snake.js"></script>
-    
+
+
+
 
     <script>
-
+      var view = new window.SnakeGame.View($("body"));
     </script>
   </body>
 </html>

@@ -3,11 +3,9 @@
     window.SnakeGame = {};
   }
 
-  console.log("SNAKE LOADED!");
-
   var Snake = window.SnakeGame.Snake = function () {
     this.dir = "N";
-    var head = [Math.floor(SnakeGame.Board.DIM_X / 2), Math.floor(SnakeGame.Board.DIM_Y / 2)]
+    var head = [Math.floor(SnakeGame.Board.DIM / 2), Math.floor(SnakeGame.Board.DIM / 2)]
     this.segments = [head, [head[0], head[1] + 1], [head[0], head[1] + 2],
                     [head[0], head[1] + 3], [head[0], head[1] + 4]];
     this.pivots = [];
@@ -68,14 +66,13 @@
     this.setupGrid();
   };
 
-  Board.DIM_X = 10;
-  Board.DIM_Y = 10;
+  Board.DIM = 10;
 
   Board.prototype.setupGrid = function() {
     var arr = [];
-    for (var i = 0; i < Board.DIM_Y; i++) {
+    for (var i = 0; i < Board.DIM; i++) {
       arr.push([]);
-      for (var j = 0; j < Board.DIM_X; j++) {
+      for (var j = 0; j < Board.DIM; j++) {
         arr[i][j] = ".";
       }
     }
@@ -84,7 +81,7 @@
 
   Board.prototype.isOutOfBounds = function () {
     var head = this.snake.nextPos(this.snake.segments[0]);
-    return ((head[0] < 0 || head[0] > Board.DIM_Y) || (head[1] < 0 || head[1] > Board.DIM_X));
+    return ((head[0] < 0 || head[0] > Board.DIM) || (head[1] < 0 || head[1] > Board.DIM));
   };
 
   Board.prototype.render = function () {
