@@ -16,27 +16,51 @@
   Snake.prototype.move = function () {
     var head = this.segments.slice(0, 1)[0]
     this.segments.pop();
+    var next = this.nextPos(head);
+    this.segments.unshift(next);
+  };
+
+  Snake.prototype.nextPos = function (pos) {
     switch (this.dir) {
       case "N":
-        console.log(head)
-        this.segments.unshift([head[0], head[1] - 1]);
+        return ([pos[0], pos[1] - 1]);
         break;
       case "S":
-        this.segments.unshift([head[0], head[1] + 1]);
+        return ([pos[0], pos[1] + 1]);
         break;
       case "E":
-        this.segments.unshift([head[0] + 1, head[1]]);
+        return ([pos[0] + 1, pos[1]]);
         break;
       case "W":
-        this.segments.unshift([head[0] - 1, head[1]]);
+        return ([pos[0] - 1, pos[1]]);
         break;
       default:
-        break
+        return pos;
+        break;
+    }
+  }
+
+  Snake.DIRS = ['N', 'S', 'E', 'W'];
+  Snake.OPPS = ['S', 'N', 'W', 'E'];
+
+  Snake.prototype.turn = function (direction) {
+    var idx = Snake.OPPS.indexOf(direction)
+    var jdx = Snake.DIRS.indexOf(this.dir)
+    if (idx !== jdx) {
+      this.dir = direction;
     }
   };
 
-  Snake.prototype.turn = function (direction) {
-    this.dir = direction;
+  Snake.prototype.isOverlapped = function () {
+    var head = this.segments.slice(0, 1)[0];
+    var next = this.nextPos(head);
+    var body = this.segments.slice(1);
+    if (body.indexOf(next) !== -1) {
+      return true;
+    }
+    else {
+      return false;
+    }
   };
 
   var Board = window.SnakeGame.Board = function () {
@@ -58,6 +82,11 @@
     this.grid = arr;
   };
 
+  Board.prototype.isOutOfBounds = function () {
+    var head = this.snake.nextPos(this.snake.segments[0]);
+    return ((head[0] < 0 || head[0] > Board.DIM_Y) || (head[1] < 0 || head[1] > Board.DIM_X));
+  };
+
   Board.prototype.render = function () {
     this.setupGrid();
     for (var i = 0; i < this.snake.segments.length; i++) {
@@ -68,8 +97,13 @@
   };
 
   Board.prototype.step = function () {
+    console.log(this.lost());
     this.snake.move();
-    this.render();
+    console.log(this.render());
+  };
+
+  Board.prototype.lost = function () {
+    return (this.snake.isOverlapped() || this.isOutOfBounds());
   };
 
 })();
