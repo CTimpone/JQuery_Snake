@@ -12,10 +12,10 @@
     var view = this;
     var callback = function () {
       if (!view.step()) {
-        clearInterval(callback)
+        clearInterval(loop)
       }
     };
-    window.setInterval(callback, 250)
+    var loop = window.setInterval(callback, 250)
   };
 
   View.prototype.bindEvents = function () {
@@ -46,7 +46,7 @@
 
   View.prototype.step = function () {
     if (this.board.lost()) {
-      //alert("Game Over.");
+      alert("Game Over.");
       return false;
       this.$el.off("keydown");
     } else {
