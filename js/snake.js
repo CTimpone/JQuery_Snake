@@ -8,15 +8,23 @@
     var head = [Math.floor(SnakeGame.Board.DIM / 2), Math.floor(SnakeGame.Board.DIM / 2)]
     this.segments = [head, [head[0], head[1] + 1], [head[0], head[1] + 2],
                     [head[0], head[1] + 3], [head[0], head[1] + 4]];
-    this.pivots = [];
   };
 
-  Snake.prototype.move = function () {
-    var head = this.segments.slice(0, 1)[0]
+  Snake.prototype.move = function (next) {
     this.segments.pop();
-    var next = this.nextPos(head);
     this.segments.unshift(next);
   };
+
+  Snake.prototype.eatApple = function (next) {
+    this.segments.unshift(next);
+  };
+
+  Snake.prototype.nextSquare = function () {
+    var head = this.segments.slice(0, 1)[0]
+    var next = this.nextPos(head);
+
+    return next;
+  }
 
   Snake.prototype.nextPos = function (pos) {
     switch (this.dir) {
@@ -51,9 +59,7 @@
 
   Snake.prototype.isOverlapped = function () {
     var head = this.segments.slice(0, 1)[0];
-    console.log(head);
     var next = this.nextPos(head);
-    console.log(next);
     var body = this.segments.slice(0, this.segments.length - 1);
     var included = false;
     for (var i = 0; i < body.length; i++) {
@@ -67,6 +73,7 @@
   var Board = window.SnakeGame.Board = function () {
     this.snake = new Snake();
     this.setupGrid();
+    this.apples = [];
   };
 
   Board.DIM = 10;
@@ -89,17 +96,34 @@
 
   Board.prototype.render = function () {
     this.setupGrid();
+
     for (var i = 0; i < this.snake.segments.length; i++) {
        this.grid[this.snake.segments[i][1]][this.snake.segments[i][0]] = "S";
     }
+
+    var board = this;
+    if (board.apples.length === 0) {
+      var flag = true;
+      while (flag) {
+        var randX = Math.floor(Math.random() * Board.DIM)
+        var randY = Math.floor(Math.random() * Board.DIM)
+        if (board.grid[randX][randY] === ".") {
+          board.grid[randX][randY] = "a"
+          board.apples = [randX, randY]
+          flag = false;
+        }
+      }
+    }
+
+    this.grid[this.apples[0]][this.apples[1]] = 'a'
 
     return JSON.stringify(this.grid);
   };
 
   Board.prototype.step = function () {
-    console.log(this.lost());
+    this.lost();
     this.snake.move();
-    console.log(this.render());
+    this.render();
   };
 
   Board.prototype.lost = function () {

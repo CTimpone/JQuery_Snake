@@ -50,7 +50,14 @@
       return false;
       this.$el.off("keydown");
     } else {
-      this.board.snake.move();
+      var next = this.board.snake.nextSquare();
+      var test = this.board.grid[next[1]][next[0]]
+      console.log(test);
+      if (test === "a") {
+        this.board.snake.eatApple(next);
+      } else {
+        this.board.snake.move(next);
+      }
       this.board.render();
       this.draw();
       return true;
@@ -81,6 +88,8 @@
       var square = view.board.grid[pos[0]][pos[1]];
       if (square === "S") {
         $li.addClass("snake")
+      } else if (square === "a") {
+        $li.addClass("apple")
       }
     })
   }

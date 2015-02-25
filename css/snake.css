@@ -40,3 +40,7 @@ li {
 .grid > li.snake {
   background: green;
 }
+
+.grid > li.apple {
+  background: red;
+}
