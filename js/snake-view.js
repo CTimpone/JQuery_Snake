@@ -79,7 +79,6 @@
       $li.removeClass();
       var pos = $li.data("pos");
       var square = view.board.grid[pos[0]][pos[1]];
-      console.log(square);
       if (square === "S") {
         $li.addClass("snake")
       }

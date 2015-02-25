@@ -51,14 +51,17 @@
 
   Snake.prototype.isOverlapped = function () {
     var head = this.segments.slice(0, 1)[0];
+    console.log(head);
     var next = this.nextPos(head);
-    var body = this.segments.slice(1);
-    if (body.indexOf(next) !== -1) {
-      return true;
+    console.log(next);
+    var body = this.segments.slice(0, this.segments.length - 1);
+    var included = false;
+    for (var i = 0; i < body.length; i++) {
+      if (body[i][0] === next[0] && body[i][1] === next[1]) {
+        included = true;
+      }
     }
-    else {
-      return false;
-    }
+    return included;
   };
 
   var Board = window.SnakeGame.Board = function () {
