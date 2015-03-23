@@ -55,6 +55,7 @@
       console.log(test);
       if (test === "a") {
         this.board.snake.eatApple(next);
+        this.board.apples = [];
       } else {
         this.board.snake.move(next);
       }
