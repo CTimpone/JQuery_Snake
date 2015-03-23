@@ -77,7 +77,7 @@
     this.points = 0;
   };
 
-  Board.DIM = 10;
+  Board.DIM = 20;
 
   Board.prototype.setupGrid = function() {
     var arr = [];

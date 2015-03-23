@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Snake</title>
     <script src="../js/jquery-2.1.1.js"></script>
+    <script src="../js/underscore-1.8.2.js"></script>
     <script src="../js/snake.js"></script>
     <script src="../js/snake-view.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/snake.css">
@@ -11,30 +12,46 @@
   <body>
     <div class="head-info group">
       <h1 class="title">Snake</h1>
-      <h1 class="points">00000</h1>
+      <h1 class="points">000000</h1>
     </div>
 
-    <section id="primary">
-      <div class="fake-grid">
+    <div class="grid-and-scores group">
+      <section id="primary">
+        <div class="fake-grid">
+        </div>
+      </section>
+      <aside class="top-scores">
+        <h1>High Scores</h1>
+        <table>
+          <tr class="table-headers">
+            <th>
+              Score
+            </th>
+            <th>
+              Speed
+            </th>
+          </tr>
+        </table>
+      </aside>
+    </div>
 
-      </div>
-    </section>
 
     <section class="container group">
       <button class="start">Start Game</button>
-      <input class="speed-select" type="number" name="name" value="100">
+      <input class="speed-select" type="number" name="name" value="200">
     </section>
     <script>
     window.SnakeGame.Scores = [];
 
     $('.start').on("click", function () {
+      delete window.Snakes
       $('#primary').empty();
       var $button = $(event.currentTarget);
 
       $button.html("New Game");
       $button.prop("disabled", true);
 
-      var view = new window.SnakeGame.View($("#primary"), $(".points"), $(".speed-select").val());
+      window.Snakes = new window.SnakeGame.View($("#primary"), $(".points"), $(".speed-select").val());
     });
     </script>
   </body>

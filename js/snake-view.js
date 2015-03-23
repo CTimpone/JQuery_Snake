@@ -6,20 +6,26 @@
   var View = SnakeGame.View = function ($el, $pointDisplay, speed) {
     this.$el = $el;
     this.$pointDisplay = $pointDisplay;
+    this.$pointDisplay.html('000000');
     this.speed = speed;
+
     this.board = new SnakeGame.Board()
+
     this.setupGrid();
     this.bindEvents();
+
     this.paused = false;
 
     var view = this;
     var callback = function () {
       if (!view.step()) {
-        clearInterval(view.loop)
+        view.generateTopScores();
+        $('body').off();
+        clearInterval(view.loop);
       }
     };
 
-    this.loop = window.setInterval(callback, this.speed)
+    this.loop = setInterval(callback, this.speed)
   };
 
   View.prototype.bindEvents = function () {
@@ -39,8 +45,10 @@
             break;
           } else {
             view.paused = false;
-            view.loop = window.setInterval(function () {
+            view.loop = setInterval(function () {
               if (!view.step()) {
+                view.generateTopScores();
+                $('body').off();
                 clearInterval(view.loop);
               }
             }, view.speed);
@@ -73,7 +81,6 @@
       alert("Game Over.");
 
       window.SnakeGame.Scores.push({points: this.board.points, speed: this.speed});
-      console.log(window.SnakeGame.Scores);
 
       return false;
       this.$el.off("keydown");
@@ -82,7 +89,7 @@
       var test = this.board.grid[next[1]][next[0]];
       if (test === "a") {
         this.board.snake.eatApple(next);
-        this.board.points += 100;
+        this.board.points += 100 * (200 / this.speed);
         this.$pointDisplay.html(this.prettyPoints(this.board.points));
         this.board.apples = [];
       } else {
@@ -129,8 +136,8 @@
     var len = stringified.length;
     var dif = 0;
 
-    if (len < 5) {
-      dif = 5 - len;
+    if (len < 6) {
+      dif = 6 - len;
     }
 
     var pretty = points;
@@ -139,5 +146,23 @@
     }
 
     return pretty;
+  },
+
+  View.prototype.generateTopScores = function () {
+    var $table = $('table')
+    $table.empty();
+    $table.html("<tr class='table-headers'><th>Score</th><th>Speed</th></tr>")
+    var sorter = function (a, b) {
+      if (a.points < b.points) {
+        return 1;
+      } else {
+        return -1;
+      }
+    };
+    var sorted = window.SnakeGame.Scores.sort(sorter);
+    _.each(sorted.slice(0, 10), function (obj) {
+      var string = "<tr><td>" + obj.points + "</td><td>" + obj.speed + "</td></tr>"
+      $table.append(string);
+    });
   }
 })();
