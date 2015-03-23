@@ -15,10 +15,22 @@
     </div>
 
     <section id="primary">
+      <div class="fake-grid">
 
+      </div>
+    </section>
+
+    <section class="container group">
+      <button class="start">Start Game</button>
     </section>
     <script>
+    $('.start').on("click", function () {
+      $('#primary').empty();
+      var $button = $(event.currentTarget);
+      $button.html("New Game");
+      $button.prop("disabled", true);
       var view = new window.SnakeGame.View($("#primary"), $('.points'));
+    })
     </script>
   </body>
 </html>

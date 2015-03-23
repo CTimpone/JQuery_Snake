@@ -10,6 +10,7 @@
     this.board = new SnakeGame.Board()
     this.setupGrid();
     this.bindEvents();
+    this.paused = false;
 
     var view = this;
     var callback = function () {
@@ -17,16 +18,34 @@
         clearInterval(loop)
       }
     };
-    var loop = window.setInterval(callback, 100)
+
+    this.loop = window.setInterval(callback, 100)
   };
 
   View.prototype.bindEvents = function () {
     var view = this;
     $('#primary').prop('focus', true);
 
+    var view = this;
+
     $('body').on("keydown", function (event) {
       var dir = false
+
       switch (event.keyCode) {
+        case 32:
+          if (!view.paused) {
+            view.paused = true;
+            clearInterval(view.loop);
+            break;
+          } else {
+            view.paused = false;
+            view.loop = window.setInterval(function () {
+              if (!view.step()) {
+                clearInterval(view.loop);
+              }
+            }, 100);
+            break;
+          }
         case 37:
           dir = 'W';
           break;
@@ -50,6 +69,7 @@
 
   View.prototype.step = function () {
     if (this.board.lost()) {
+      $('.start').prop("disabled", false);
       alert("Game Over.");
       return false;
       this.$el.off("keydown");
