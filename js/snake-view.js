@@ -3,10 +3,10 @@
     window.SnakeGame = {};
   }
 
-  var View = SnakeGame.View = function ($el, $pointDisplay) {
+  var View = SnakeGame.View = function ($el, $pointDisplay, speed) {
     this.$el = $el;
     this.$pointDisplay = $pointDisplay;
-
+    this.speed = speed;
     this.board = new SnakeGame.Board()
     this.setupGrid();
     this.bindEvents();
@@ -15,11 +15,11 @@
     var view = this;
     var callback = function () {
       if (!view.step()) {
-        clearInterval(loop)
+        clearInterval(view.loop)
       }
     };
 
-    this.loop = window.setInterval(callback, 100)
+    this.loop = window.setInterval(callback, this.speed)
   };
 
   View.prototype.bindEvents = function () {
@@ -43,7 +43,7 @@
               if (!view.step()) {
                 clearInterval(view.loop);
               }
-            }, 100);
+            }, view.speed);
             break;
           }
         case 37:
@@ -71,6 +71,10 @@
     if (this.board.lost()) {
       $('.start').prop("disabled", false);
       alert("Game Over.");
+
+      window.SnakeGame.Scores.push({points: this.board.points, speed: this.speed});
+      console.log(window.SnakeGame.Scores);
+
       return false;
       this.$el.off("keydown");
     } else {

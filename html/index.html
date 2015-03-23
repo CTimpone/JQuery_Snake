@@ -22,15 +22,20 @@
 
     <section class="container group">
       <button class="start">Start Game</button>
+      <input class="speed-select" type="number" name="name" value="100">
     </section>
     <script>
+    window.SnakeGame.Scores = [];
+
     $('.start').on("click", function () {
       $('#primary').empty();
       var $button = $(event.currentTarget);
+
       $button.html("New Game");
       $button.prop("disabled", true);
-      var view = new window.SnakeGame.View($("#primary"), $('.points'));
-    })
+
+      var view = new window.SnakeGame.View($("#primary"), $(".points"), $(".speed-select").val());
+    });
     </script>
   </body>
 </html>
