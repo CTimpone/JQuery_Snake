@@ -72,12 +72,16 @@ li {
   font-weight: 700;
   text-align: center;
   text-decoration: underline;
-  margin-top: 10px;
+  margin: 10px 0;
 }
 
 .top-scores table {
   width: 100%;
-  border-style: dashed;
+  outline: thin solid black;
+}
+
+.top-scores tr {
+  outline: thin solid black;
 }
 
 .top-scores td {
@@ -124,5 +128,46 @@ li {
   border-left: 2px solid #000;
   border-right: 2px solid #000;
   border-bottom: 2px solid #000;
+}
+
+.container button {
+  font-size: 24px;
+  float: right;
+  background: red;
+  border: none;
+  font-weight: 700;
+  width: 150px;
+  height: 34px;
+  border-left: 2px solid #000;
+}
+
+.container button:hover {
+  cursor: pointer;
+  background: green;
+}
+
+.container input {
+  font-size: 24px;
+  width: 392px;
+  float: left;
+  text-align: center;
+}
+
+.container input:hover {
+  cursor: pointer;
+}
+
+footer {
+  width: 548px;
+  margin: auto;
+  border-left: 2px solid #000;
+  border-right: 2px solid #000;
+  border-bottom: 2px solid #000;
   margin-bottom: 50px;
+}
+
+footer p {
+  margin: 0;
+  background: #14CC94;
+  font-size: 20px;
 }
