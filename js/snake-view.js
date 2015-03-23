@@ -21,6 +21,7 @@
       if (!view.step()) {
         view.generateTopScores();
         $('body').off();
+
         clearInterval(view.loop);
       }
     };
@@ -49,6 +50,7 @@
               if (!view.step()) {
                 view.generateTopScores();
                 $('body').off();
+
                 clearInterval(view.loop);
               }
             }, view.speed);
@@ -78,6 +80,11 @@
   View.prototype.step = function () {
     if (this.board.lost()) {
       $('.start').prop("disabled", false);
+      
+      var snake = $('.snake')
+      snake.addClass('dead');
+      snake.removeClass('.snake');
+
       alert("Game Over.");
 
       window.SnakeGame.Scores.push({points: this.board.points, speed: this.speed});
@@ -160,7 +167,7 @@
       }
     };
     var sorted = window.SnakeGame.Scores.sort(sorter);
-    _.each(sorted.slice(0, 10), function (obj) {
+    _.each(sorted.slice(0, 12), function (obj) {
       var string = "<tr><td>" + obj.points + "</td><td>" + obj.speed + "</td></tr>"
       $table.append(string);
     });

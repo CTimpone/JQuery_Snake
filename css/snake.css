@@ -41,6 +41,10 @@ li {
   background: green;
 }
 
+.grid > li.dead {
+  background: black;
+}
+
 .grid > li.apple {
   background: red;
 }
