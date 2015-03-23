@@ -91,7 +91,8 @@
 
   Board.prototype.isOutOfBounds = function () {
     var head = this.snake.nextPos(this.snake.segments[0]);
-    return ((head[0] < 0 || head[0] > Board.DIM) || (head[1] < 0 || head[1] > Board.DIM));
+    console.log(head);
+    return ((head[0] < 0 || head[0] >= Board.DIM) || (head[1] < 0 || head[1] >= Board.DIM));
   };
 
   Board.prototype.render = function () {

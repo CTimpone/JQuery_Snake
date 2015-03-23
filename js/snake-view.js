@@ -52,7 +52,6 @@
     } else {
       var next = this.board.snake.nextSquare();
       var test = this.board.grid[next[1]][next[0]]
-      console.log(test);
       if (test === "a") {
         this.board.snake.eatApple(next);
         this.board.apples = [];
