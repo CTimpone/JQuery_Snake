@@ -9,12 +9,16 @@
     <link rel="stylesheet" type="text/css" href="../css/snake.css">
   </head>
   <body>
+    <div class="head-info group">
+      <h1 class="title">Snake</h1>
+      <h1 class="points">00000</h1>
+    </div>
 
+    <section id="primary">
 
-
-
+    </section>
     <script>
-      var view = new window.SnakeGame.View($("body"));
+      var view = new window.SnakeGame.View($("#primary"), $('.points'));
     </script>
   </body>
 </html>

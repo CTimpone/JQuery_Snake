@@ -3,8 +3,10 @@
     window.SnakeGame = {};
   }
 
-  var View = SnakeGame.View = function ($el) {
+  var View = SnakeGame.View = function ($el, $pointDisplay) {
     this.$el = $el;
+    this.$pointDisplay = $pointDisplay;
+
     this.board = new SnakeGame.Board()
     this.setupGrid();
     this.bindEvents();
@@ -15,12 +17,14 @@
         clearInterval(loop)
       }
     };
-    var loop = window.setInterval(callback, 250)
+    var loop = window.setInterval(callback, 100)
   };
 
   View.prototype.bindEvents = function () {
-    var view = this
-    this.$el.on("keydown", function (event) {
+    var view = this;
+    $('#primary').prop('focus', true);
+
+    $('body').on("keydown", function (event) {
       var dir = false
       switch (event.keyCode) {
         case 37:
@@ -51,9 +55,11 @@
       this.$el.off("keydown");
     } else {
       var next = this.board.snake.nextSquare();
-      var test = this.board.grid[next[1]][next[0]]
+      var test = this.board.grid[next[1]][next[0]];
       if (test === "a") {
         this.board.snake.eatApple(next);
+        this.board.points += 100;
+        this.$pointDisplay.html(this.prettyPoints(this.board.points));
         this.board.apples = [];
       } else {
         this.board.snake.move(next);
@@ -92,5 +98,22 @@
         $li.addClass("apple")
       }
     })
+  },
+
+  View.prototype.prettyPoints = function (points) {
+    var stringified = String(points);
+    var len = stringified.length;
+    var dif = 0;
+
+    if (len < 5) {
+      dif = 5 - len;
+    }
+
+    var pretty = points;
+    for (var i = 0; i < dif; i++) {
+      pretty = "0" + pretty;
+    }
+
+    return pretty;
   }
 })();

@@ -1,6 +1,6 @@
 /*RESET AND CLEARFIX */
 
-body, ul, li {
+body, ul, li, h1 {
   margin: 0;
   padding: 0;
   border: 0;
@@ -23,15 +23,15 @@ li {
 /*Grid */
 
 .grid {
-  margin: 100px auto;
+  margin: auto;
   border: 1px solid #000;
-  width: 620px;
+  width: 400px;
 }
 
 .grid > li {
-  width: 58px;
-  height: 58px;
-  background: gray;
+  width: 38px;
+  height: 38px;
+  background: #fff;
   display: block;
   float: left;
   border: 1px solid #000;
@@ -43,4 +43,38 @@ li {
 
 .grid > li.apple {
   background: red;
+}
+
+/*Non-Grid*/
+.head-info {
+  width: 398px;
+  margin: auto;
+  border-top: 2px solid #000;
+  border-left:2px solid #000;
+  border-right: 2px solid #000;
+  background: #14CC94;
+}
+
+.title, .points {
+  margin: auto;
+  display: block;
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  color: green;
+  text-shadow: -1px 0 #444, 0 1px #444, 1px 0 #444, 0 -1px #444;
+  padding-top: 5px;
+}
+
+.title {
+  float: left;
+  width: 198px;
+}
+
+.points {
+  float: right;
+  background: white;
+  border-left: 2px solid #000;
+  width: 198px;
+  letter-spacing: 15px;
 }
