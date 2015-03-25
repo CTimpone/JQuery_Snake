@@ -4,6 +4,16 @@
   }
 
   var View = SnakeGame.View = function ($el, $pointDisplay, speed, username) {
+    var view = this;
+
+    // $.ajax({
+    //   url: "/scores",
+    //   type: "GET",
+    //   success: function (top_scores) {
+    //     view.generateTopScores(top_scores);
+    //   }
+    // });
+
     this.$el = $el;
     this.$pointDisplay = $pointDisplay;
     this.$pointDisplay.html('000000');
@@ -17,12 +27,11 @@
 
     this.paused = false;
 
-    var view = this;
     var callback = function () {
       if (!view.step()) {
         view.generateTopScores();
         $('body').off();
-        console.log('test');
+
         clearInterval(view.loop);
       }
     };
@@ -88,10 +97,21 @@
 
       alert("Game Over.");
 
-      window.SnakeGame.Scores.push({
-        points: this.board.points,
+      var data = {
+        score: this.board.points,
         speed: this.speed,
-        username: this.username
+        name: this.username
+      };
+
+      var view = this;
+
+      $.ajax({
+        url: "/scores",
+        type: "POST",
+        data: {score: data},
+        success: function (top_scores) {
+          view.generateTopScores(top_scores)
+        }
       });
 
       return false;
@@ -160,20 +180,13 @@
     return pretty;
   },
 
-  View.prototype.generateTopScores = function () {
+  View.prototype.generateTopScores = function (data) {
     var $table = $('table')
     $table.empty();
     $table.html("<tr class='table-headers'><th>Score</th><th>Speed</th></tr>")
-    var sorter = function (a, b) {
-      if (a.points < b.points) {
-        return 1;
-      } else {
-        return -1;
-      }
-    };
-    var sorted = window.SnakeGame.Scores.sort(sorter);
-    _.each(sorted.slice(0, 12), function (obj) {
-      var string = "<tr><td>" + obj.points + "</td><td>" + obj.speed + "</td></tr>"
+
+    _.each(data, function (obj) {
+      var string = "<tr><td>" + obj.name + "</td><td>" + obj.score + "</td></tr>"
       $table.append(string);
     });
   }

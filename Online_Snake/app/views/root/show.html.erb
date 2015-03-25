@@ -13,10 +13,10 @@
     <table>
       <tr class="table-headers">
         <th>
-          Score
+          Name
         </th>
         <th>
-          Speed
+          Score
         </th>
       </tr>
     </table>
@@ -45,7 +45,14 @@
 
 </footer>
 <script>
-window.SnakeGame.Scores = [];
+
+$.ajax({
+  url: "/scores",
+  type: "GET",
+  success: function (top_scores) {
+    window.SnakeGame.View.prototype.generateTopScores(top_scores)
+  }
+});
 
 $('.start').on("click", function () {
   delete window.Snakes
