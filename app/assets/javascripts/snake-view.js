@@ -190,7 +190,7 @@
     $table.html("<tr class='table-headers'><th>Score</th><th>Speed</th></tr>")
 
     _.each(data, function (obj) {
-      var string = "<tr><td>" + obj.name + "</td><td>" + obj.score + "</td></tr>"
+      var string = "<tr><td>" + _.escape(obj.name) + "</td><td>" + obj.score + "</td></tr>"
       $table.append(string);
     });
   }
