@@ -37,7 +37,15 @@
 
 
     <section class="container group">
-      <input class="speed-select" type="number" name="name" value="200">
+      <label>
+        Speed
+        <input class="speed-select" type="number"value="200">
+      </label>
+
+      <label>
+        Name
+        <input class="username" type="text">
+      </label>
       <button class="start">Start Game</button>
     </section>
     <footer>
@@ -59,7 +67,12 @@
       $button.html("New Game");
       $button.prop("disabled", true);
 
-      window.Snakes = new window.SnakeGame.View($("#primary"), $(".points"), $(".speed-select").val());
+      window.Snakes = new window.SnakeGame.View(
+        $("#primary"),
+        $(".points"),
+        $(".speed-select").val(),
+        $(".username").val()
+      );
     });
     </script>
   </body>

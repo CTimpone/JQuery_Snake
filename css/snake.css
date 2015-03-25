@@ -151,15 +151,27 @@ li {
   background: green;
 }
 
+.container label {
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
 .container input {
   font-size: 24px;
-  width: 392px;
-  float: left;
   text-align: center;
 }
 
 .container input:hover {
   cursor: pointer;
+}
+
+.speed-select {
+  width: 75px;
+}
+
+.username {
+  width: 151px;
 }
 
 footer {
@@ -168,11 +180,11 @@ footer {
   border-left: 2px solid #000;
   border-right: 2px solid #000;
   border-bottom: 2px solid #000;
-  margin-bottom: 50px;
 }
 
 footer p {
   margin: 0;
+  padding: 5px;
   background: #14CC94;
   font-size: 20px;
 }

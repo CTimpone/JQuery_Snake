@@ -3,11 +3,12 @@
     window.SnakeGame = {};
   }
 
-  var View = SnakeGame.View = function ($el, $pointDisplay, speed) {
+  var View = SnakeGame.View = function ($el, $pointDisplay, speed, username) {
     this.$el = $el;
     this.$pointDisplay = $pointDisplay;
     this.$pointDisplay.html('000000');
     this.speed = speed;
+    this.username = username;
 
     this.board = new SnakeGame.Board()
 
@@ -80,14 +81,18 @@
   View.prototype.step = function () {
     if (this.board.lost()) {
       $('.start').prop("disabled", false);
-      
+
       var snake = $('.snake')
       snake.addClass('dead');
       snake.removeClass('.snake');
 
       alert("Game Over.");
 
-      window.SnakeGame.Scores.push({points: this.board.points, speed: this.speed});
+      window.SnakeGame.Scores.push({
+        points: this.board.points,
+        speed: this.speed,
+        username: this.username
+      });
 
       return false;
       this.$el.off("keydown");
