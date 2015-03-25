@@ -1,0 +1,1560 @@
+  [1m[36m (211.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (16.7ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateScores (20150325184934)
+  [1m[35m (17.4ms)[0m  BEGIN
+  [1m[36m (55.5ms)[0m  [1mCREATE TABLE "scores" ("id" serial primary key, "score" integer NOT NULL, "speed" integer NOT NULL, "name" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (17.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150325184934"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.8ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (6.4ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'scores'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+
+
+Started GET "/" for ::1 at 2015-03-25 14:57:54 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RootController#show as HTML
+  Rendered root/show.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 76ms
+
+SyntaxError (/Users/appacademy/Desktop/JQuery_Snake/Online_Snake/app/views/layouts/application.html.erb:5: syntax error, unexpected ')'
+...  'application', media: 'all',);@output_buffer.safe_append='
+...                               ^
+/Users/appacademy/Desktop/JQuery_Snake/Online_Snake/app/views/layouts/application.html.erb:6: syntax error, unexpected ')'
+...pt_include_tag 'application', );@output_buffer.safe_append='
+...                               ^
+/Users/appacademy/Desktop/JQuery_Snake/Online_Snake/app/views/layouts/application.html.erb:16: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/appacademy/Desktop/JQuery_Snake/Online_Snake/app/views/layouts/application.html.erb:18: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/layouts/application.html.erb:5: syntax error, unexpected ')'
+  app/views/layouts/application.html.erb:6: syntax error, unexpected ')'
+  app/views/layouts/application.html.erb:16: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/layouts/application.html.erb:18: syntax error, unexpected keyword_end, expecting ')'
+
+
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.6ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (34.3ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (64.5ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (19.5ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (54.9ms)
+
+
+Started GET "/" for ::1 at 2015-03-25 14:58:19 -0400
+Processing by RootController#show as HTML
+  Rendered root/show.html.erb within layouts/application (0.1ms)
+Completed 500 Internal Server Error in 104ms
+
+ActionView::Template::Error (couldn't find file 'turbolinks'
+  (in /Users/appacademy/Desktop/JQuery_Snake/Online_Snake/app/assets/javascripts/application.js:15)):
+    3: <head>
+    4:   <title>OnlineSnake</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all'%>
+    6:   <%= javascript_include_tag 'application' %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+    9: <body>
+  app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb___50271612342774504_70308502996180'
+
+
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.9ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (27.3ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (16.8ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (46.6ms)
+
+
+Started GET "/" for ::1 at 2015-03-25 14:59:04 -0400
+Processing by RootController#show as HTML
+  Rendered root/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 452ms (Views: 451.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/root-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 14:59:04 -0400
+
+
+Started GET "/assets/application-2f635f4f24c84d436395d248d576e2e0.css?body=1" for ::1 at 2015-03-25 14:59:04 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-25 14:59:04 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-25 14:59:04 -0400
+
+
+Started GET "/assets/snake-view-bdcaa4f5dc7ece6439007203a643b74a.js?body=1" for ::1 at 2015-03-25 14:59:04 -0400
+
+
+Started GET "/assets/snake-68066c0a1f692458d2a3947178591202.js?body=1" for ::1 at 2015-03-25 14:59:04 -0400
+
+
+Started GET "/assets/root-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-25 14:59:05 -0400
+
+
+Started GET "/assets/application-42b049885c0f14ee80c32f2c4e55f824.js?body=1" for ::1 at 2015-03-25 14:59:05 -0400
+
+
+Started GET "/" for ::1 at 2015-03-25 15:02:16 -0400
+Processing by RootController#show as HTML
+  Rendered root/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 71ms (Views: 70.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-03-25 15:03:12 -0400
+Processing by RootController#show as HTML
+  Rendered root/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 256ms (Views: 256.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/snake-view-d5ae7c4edbd019d6dbc8c4dca443db66.js?body=1" for ::1 at 2015-03-25 15:03:12 -0400
+
+
+Started GET "/assets/application-f297a217a3cb895f0567b324b518f977.js?body=1" for ::1 at 2015-03-25 15:03:12 -0400
+
+
+Started GET "/" for ::1 at 2015-03-25 15:04:10 -0400
+Processing by RootController#show as HTML
+  Rendered root/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 129ms (Views: 128.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application-7441071b977976ed5de53028f6e245b8.js?body=1" for ::1 at 2015-03-25 15:04:11 -0400
+
+
+Started GET "/assets/underscore-1.8.2-60baf2033ddf3a64f6cf47997d4e2924.js?body=1" for ::1 at 2015-03-25 15:04:11 -0400
+
+
+Started GET "/" for ::1 at 2015-03-25 15:05:46 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RootController#show as HTML
+  Rendered root/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 185ms (Views: 185.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application-2f635f4f24c84d436395d248d576e2e0.css?body=1" for ::1 at 2015-03-25 15:05:47 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-25 15:05:47 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-25 15:05:47 -0400
+
+
+Started GET "/assets/root-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:05:47 -0400
+
+
+Started GET "/assets/root-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-25 15:05:47 -0400
+
+
+Started GET "/assets/underscore-1.8.2-60baf2033ddf3a64f6cf47997d4e2924.js?body=1" for ::1 at 2015-03-25 15:05:47 -0400
+
+
+Started GET "/assets/snake-view-d5ae7c4edbd019d6dbc8c4dca443db66.js?body=1" for ::1 at 2015-03-25 15:05:47 -0400
+
+
+Started GET "/assets/snake-68066c0a1f692458d2a3947178591202.js?body=1" for ::1 at 2015-03-25 15:05:47 -0400
+
+
+Started GET "/assets/application-7441071b977976ed5de53028f6e245b8.js?body=1" for ::1 at 2015-03-25 15:05:47 -0400
+
+
+Started GET "/" for ::1 at 2015-03-25 15:05:52 -0400
+Processing by RootController#show as HTML
+  Rendered root/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 148ms (Views: 147.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/root-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:05:53 -0400
+
+
+Started GET "/assets/root-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-25 15:05:53 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-25 15:05:53 -0400
+
+
+Started GET "/assets/underscore-1.8.2-60baf2033ddf3a64f6cf47997d4e2924.js?body=1" for ::1 at 2015-03-25 15:05:53 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-25 15:05:53 -0400
+
+
+Started GET "/assets/application-2f635f4f24c84d436395d248d576e2e0.css?body=1" for ::1 at 2015-03-25 15:05:53 -0400
+
+
+Started GET "/assets/snake-view-d5ae7c4edbd019d6dbc8c4dca443db66.js?body=1" for ::1 at 2015-03-25 15:05:53 -0400
+
+
+Started GET "/assets/snake-68066c0a1f692458d2a3947178591202.js?body=1" for ::1 at 2015-03-25 15:05:53 -0400
+
+
+Started GET "/assets/application-7441071b977976ed5de53028f6e245b8.js?body=1" for ::1 at 2015-03-25 15:05:53 -0400
+
+
+Started GET "/" for ::1 at 2015-03-25 15:16:05 -0400
+Processing by RootController#show as HTML
+  Rendered root/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 53ms (Views: 53.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/root-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:16:05 -0400
+
+
+Started GET "/assets/application-2f635f4f24c84d436395d248d576e2e0.css?body=1" for ::1 at 2015-03-25 15:16:05 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-25 15:16:05 -0400
+
+
+Started GET "/assets/underscore-1.8.2-60baf2033ddf3a64f6cf47997d4e2924.js?body=1" for ::1 at 2015-03-25 15:16:05 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-25 15:16:05 -0400
+
+
+Started GET "/assets/root-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-25 15:16:05 -0400
+
+
+Started GET "/assets/snake-view-d5ae7c4edbd019d6dbc8c4dca443db66.js?body=1" for ::1 at 2015-03-25 15:16:05 -0400
+
+
+Started GET "/assets/snake-68066c0a1f692458d2a3947178591202.js?body=1" for ::1 at 2015-03-25 15:16:05 -0400
+
+
+Started GET "/assets/application-7441071b977976ed5de53028f6e245b8.js?body=1" for ::1 at 2015-03-25 15:16:05 -0400
+
+
+Started GET "/" for ::1 at 2015-03-25 15:29:37 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RootController#show as HTML
+  Rendered root/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 477ms (Views: 476.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:29:38 -0400
+
+
+Started GET "/assets/snake-view-14f421da4cfbbfffedc7e34af0b8c638.js?body=1" for ::1 at 2015-03-25 15:29:38 -0400
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-25 15:29:38 -0400
+
+
+Started GET "/assets/application-39b6152c92ee6f8ecdbb3038a4436c9e.js?body=1" for ::1 at 2015-03-25 15:29:38 -0400
+
+
+Started GET "/assets/application-2f635f4f24c84d436395d248d576e2e0.css?body=1" for ::1 at 2015-03-25 15:29:38 -0400
+
+
+Started GET "/assets/root-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:29:38 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-25 15:29:38 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-25 15:29:38 -0400
+
+
+Started GET "/assets/underscore-1.8.2-60baf2033ddf3a64f6cf47997d4e2924.js?body=1" for ::1 at 2015-03-25 15:29:38 -0400
+
+
+Started GET "/assets/root-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-25 15:29:38 -0400
+
+
+Started GET "/assets/snake-68066c0a1f692458d2a3947178591202.js?body=1" for ::1 at 2015-03-25 15:29:38 -0400
+
+
+Started GET "/assets/root-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:29:40 -0400
+
+
+Started GET "/assets/application-2f635f4f24c84d436395d248d576e2e0.css?body=1" for ::1 at 2015-03-25 15:29:40 -0400
+
+
+Started POST "/scores" for ::1 at 2015-03-25 15:30:02 -0400
+Processing by ScoresController#create as */*
+  Parameters: {"score"=>{"score"=>"2000", "speed"=>"50", "name"=>"GUEST"}}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (53.5ms)[0m  [1mINSERT INTO "scores" ("name", "speed", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "GUEST"], ["speed", 50], ["score", 2000], ["created_at", "2015-03-25 19:30:02.378348"], ["updated_at", "2015-03-25 19:30:02.378348"]]
+  [1m[35m (20.9ms)[0m  COMMIT
+Completed 500 Internal Server Error in 151ms
+
+NameError (uninitialized constant ScoresController::Show):
+  app/controllers/scores_controller.rb:5:in `create'
+
+
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.5ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.7ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.1ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (26.3ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (18.7ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (51.1ms)
+
+
+Started GET "/" for ::1 at 2015-03-25 15:31:02 -0400
+Processing by RootController#show as HTML
+  Rendered root/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 87ms (Views: 86.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:31:03 -0400
+
+
+Started GET "/assets/application-2f635f4f24c84d436395d248d576e2e0.css?body=1" for ::1 at 2015-03-25 15:31:03 -0400
+
+
+Started GET "/assets/root-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:31:03 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-25 15:31:03 -0400
+
+
+Started GET "/assets/underscore-1.8.2-60baf2033ddf3a64f6cf47997d4e2924.js?body=1" for ::1 at 2015-03-25 15:31:03 -0400
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-25 15:31:03 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-25 15:31:03 -0400
+
+
+Started GET "/assets/root-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-25 15:31:03 -0400
+
+
+Started GET "/assets/snake-view-14f421da4cfbbfffedc7e34af0b8c638.js?body=1" for ::1 at 2015-03-25 15:31:03 -0400
+
+
+Started GET "/assets/snake-68066c0a1f692458d2a3947178591202.js?body=1" for ::1 at 2015-03-25 15:31:03 -0400
+
+
+Started GET "/assets/application-39b6152c92ee6f8ecdbb3038a4436c9e.js?body=1" for ::1 at 2015-03-25 15:31:03 -0400
+
+
+Started POST "/scores" for ::1 at 2015-03-25 15:31:29 -0400
+Processing by ScoresController#create as */*
+  Parameters: {"score"=>{"score"=>"2400", "speed"=>"50", "name"=>"GUEST"}}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "scores" ("name", "speed", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "GUEST"], ["speed", 50], ["score", 2400], ["created_at", "2015-03-25 19:31:29.127805"], ["updated_at", "2015-03-25 19:31:29.127805"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mScore Load (16.8ms)[0m  SELECT  "scores".* FROM "scores" WHERE (score > 0) LIMIT 12
+Completed 200 OK in 44ms (Views: 3.9ms | ActiveRecord: 20.4ms)
+
+
+Started GET "/" for ::1 at 2015-03-25 15:33:35 -0400
+Processing by RootController#show as HTML
+  Rendered root/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 349ms (Views: 348.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/snake-view-ac8fd9e031487660f4d66aa70ea4280c.js?body=1" for ::1 at 2015-03-25 15:33:36 -0400
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:33:36 -0400
+
+
+Started GET "/assets/application-2f635f4f24c84d436395d248d576e2e0.css?body=1" for ::1 at 2015-03-25 15:33:36 -0400
+
+
+Started GET "/assets/root-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:33:36 -0400
+
+
+Started GET "/assets/application-622cce18a80bcffeeacbce63fd243202.js?body=1" for ::1 at 2015-03-25 15:33:36 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-25 15:33:36 -0400
+
+
+Started GET "/assets/underscore-1.8.2-60baf2033ddf3a64f6cf47997d4e2924.js?body=1" for ::1 at 2015-03-25 15:33:36 -0400
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-25 15:33:36 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-25 15:33:36 -0400
+
+
+Started GET "/assets/root-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-25 15:33:36 -0400
+
+
+Started GET "/assets/snake-68066c0a1f692458d2a3947178591202.js?body=1" for ::1 at 2015-03-25 15:33:36 -0400
+
+
+Started POST "/scores" for ::1 at 2015-03-25 15:33:52 -0400
+Processing by ScoresController#create as */*
+  Parameters: {"score"=>{"score"=>"1600", "speed"=>"50", "name"=>"GUEST"}}
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "scores" ("name", "speed", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "GUEST"], ["speed", 50], ["score", 1600], ["created_at", "2015-03-25 19:33:52.667588"], ["updated_at", "2015-03-25 19:33:52.667588"]]
+  [1m[36m (76.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mScore Load (0.7ms)[0m  SELECT  "scores".* FROM "scores" WHERE (score > 0) LIMIT 12
+Completed 200 OK in 84ms (Views: 1.9ms | ActiveRecord: 77.6ms)
+
+
+Started POST "/scores" for ::1 at 2015-03-25 15:33:53 -0400
+Processing by ScoresController#create as */*
+  Parameters: {"score"=>{"score"=>"1600", "speed"=>"50", "name"=>"GUEST"}}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "scores" ("name", "speed", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "GUEST"], ["speed", 50], ["score", 1600], ["created_at", "2015-03-25 19:33:53.513143"], ["updated_at", "2015-03-25 19:33:53.513143"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mScore Load (0.4ms)[0m  SELECT  "scores".* FROM "scores" WHERE (score > 0) LIMIT 12
+Completed 200 OK in 8ms (Views: 2.9ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/scores" for ::1 at 2015-03-25 15:33:54 -0400
+Processing by ScoresController#create as */*
+  Parameters: {"score"=>{"score"=>"1600", "speed"=>"50", "name"=>"GUEST"}}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "scores" ("name", "speed", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "GUEST"], ["speed", 50], ["score", 1600], ["created_at", "2015-03-25 19:33:54.089399"], ["updated_at", "2015-03-25 19:33:54.089399"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mScore Load (0.4ms)[0m  SELECT  "scores".* FROM "scores" WHERE (score > 0) LIMIT 12
+Completed 200 OK in 6ms (Views: 1.8ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/scores" for ::1 at 2015-03-25 15:34:06 -0400
+Processing by ScoresController#create as */*
+  Parameters: {"score"=>{"score"=>"1600", "speed"=>"50", "name"=>"GUEST"}}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "scores" ("name", "speed", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "GUEST"], ["speed", 50], ["score", 1600], ["created_at", "2015-03-25 19:34:06.928373"], ["updated_at", "2015-03-25 19:34:06.928373"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mScore Load (0.5ms)[0m  SELECT  "scores".* FROM "scores" WHERE (score > 0) LIMIT 12
+Completed 200 OK in 7ms (Views: 2.3ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/scores" for ::1 at 2015-03-25 15:34:08 -0400
+Processing by ScoresController#create as */*
+  Parameters: {"score"=>{"score"=>"1600", "speed"=>"50", "name"=>"GUEST"}}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "scores" ("name", "speed", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "GUEST"], ["speed", 50], ["score", 1600], ["created_at", "2015-03-25 19:34:08.281935"], ["updated_at", "2015-03-25 19:34:08.281935"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mScore Load (0.6ms)[0m  SELECT  "scores".* FROM "scores" WHERE (score > 0) LIMIT 12
+Completed 200 OK in 8ms (Views: 2.8ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/scores" for ::1 at 2015-03-25 15:34:08 -0400
+Processing by ScoresController#create as */*
+  Parameters: {"score"=>{"score"=>"1600", "speed"=>"50", "name"=>"GUEST"}}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "scores" ("name", "speed", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "GUEST"], ["speed", 50], ["score", 1600], ["created_at", "2015-03-25 19:34:08.817496"], ["updated_at", "2015-03-25 19:34:08.817496"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mScore Load (0.5ms)[0m  SELECT  "scores".* FROM "scores" WHERE (score > 0) LIMIT 12
+Completed 200 OK in 8ms (Views: 3.1ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/scores" for ::1 at 2015-03-25 15:34:09 -0400
+Processing by ScoresController#create as */*
+  Parameters: {"score"=>{"score"=>"1600", "speed"=>"50", "name"=>"GUEST"}}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "scores" ("name", "speed", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "GUEST"], ["speed", 50], ["score", 1600], ["created_at", "2015-03-25 19:34:09.345205"], ["updated_at", "2015-03-25 19:34:09.345205"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mScore Load (0.5ms)[0m  SELECT  "scores".* FROM "scores" WHERE (score > 0) LIMIT 12
+Completed 200 OK in 8ms (Views: 3.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2015-03-25 15:34:30 -0400
+Processing by RootController#show as HTML
+  Rendered root/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 238ms (Views: 238.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/snake-view-22a33515468a3ab94d0491c5d054311a.js?body=1" for ::1 at 2015-03-25 15:34:30 -0400
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:34:30 -0400
+
+
+Started GET "/assets/root-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:34:30 -0400
+
+
+Started GET "/assets/application-7a0a3102f2fc0a2998b0cddd9ac8ee8a.js?body=1" for ::1 at 2015-03-25 15:34:30 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-25 15:34:30 -0400
+
+
+Started GET "/assets/application-2f635f4f24c84d436395d248d576e2e0.css?body=1" for ::1 at 2015-03-25 15:34:30 -0400
+
+
+Started GET "/assets/underscore-1.8.2-60baf2033ddf3a64f6cf47997d4e2924.js?body=1" for ::1 at 2015-03-25 15:34:30 -0400
+
+
+Started GET "/assets/root-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-25 15:34:30 -0400
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-25 15:34:30 -0400
+
+
+Started GET "/assets/snake-68066c0a1f692458d2a3947178591202.js?body=1" for ::1 at 2015-03-25 15:34:30 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-25 15:34:30 -0400
+
+
+Started POST "/scores" for ::1 at 2015-03-25 15:34:44 -0400
+Processing by ScoresController#create as */*
+  Parameters: {"score"=>{"score"=>"0", "speed"=>"50", "name"=>"GUEST"}}
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "scores" ("name", "speed", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "GUEST"], ["speed", 50], ["score", 0], ["created_at", "2015-03-25 19:34:44.033953"], ["updated_at", "2015-03-25 19:34:44.033953"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mScore Load (0.6ms)[0m  SELECT  "scores".* FROM "scores" WHERE (score > 0) LIMIT 12
+Completed 200 OK in 8ms (Views: 2.7ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/scores" for ::1 at 2015-03-25 15:34:45 -0400
+Processing by ScoresController#create as */*
+  Parameters: {"score"=>{"score"=>"0", "speed"=>"50", "name"=>"GUEST"}}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "scores" ("name", "speed", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "GUEST"], ["speed", 50], ["score", 0], ["created_at", "2015-03-25 19:34:45.638834"], ["updated_at", "2015-03-25 19:34:45.638834"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mScore Load (0.4ms)[0m  SELECT  "scores".* FROM "scores" WHERE (score > 0) LIMIT 12
+Completed 200 OK in 6ms (Views: 2.2ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/scores" for ::1 at 2015-03-25 15:34:47 -0400
+Processing by ScoresController#create as */*
+  Parameters: {"score"=>{"score"=>"0", "speed"=>"50", "name"=>"GUEST"}}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "scores" ("name", "speed", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "GUEST"], ["speed", 50], ["score", 0], ["created_at", "2015-03-25 19:34:47.670207"], ["updated_at", "2015-03-25 19:34:47.670207"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mScore Load (0.4ms)[0m  SELECT  "scores".* FROM "scores" WHERE (score > 0) LIMIT 12
+Completed 200 OK in 6ms (Views: 2.4ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/scores" for ::1 at 2015-03-25 15:34:48 -0400
+Processing by ScoresController#create as */*
+  Parameters: {"score"=>{"score"=>"0", "speed"=>"50", "name"=>"GUEST"}}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "scores" ("name", "speed", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "GUEST"], ["speed", 50], ["score", 0], ["created_at", "2015-03-25 19:34:48.927166"], ["updated_at", "2015-03-25 19:34:48.927166"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mScore Load (0.5ms)[0m  SELECT  "scores".* FROM "scores" WHERE (score > 0) LIMIT 12
+Completed 200 OK in 6ms (Views: 2.5ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/scores" for ::1 at 2015-03-25 15:34:49 -0400
+Processing by ScoresController#create as */*
+  Parameters: {"score"=>{"score"=>"0", "speed"=>"50", "name"=>"GUEST"}}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "scores" ("name", "speed", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "GUEST"], ["speed", 50], ["score", 0], ["created_at", "2015-03-25 19:34:49.525350"], ["updated_at", "2015-03-25 19:34:49.525350"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mScore Load (0.4ms)[0m  SELECT  "scores".* FROM "scores" WHERE (score > 0) LIMIT 12
+Completed 200 OK in 6ms (Views: 2.4ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/scores" for ::1 at 2015-03-25 15:34:49 -0400
+Processing by ScoresController#create as */*
+  Parameters: {"score"=>{"score"=>"0", "speed"=>"50", "name"=>"GUEST"}}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "scores" ("name", "speed", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "GUEST"], ["speed", 50], ["score", 0], ["created_at", "2015-03-25 19:34:49.998746"], ["updated_at", "2015-03-25 19:34:49.998746"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mScore Load (0.5ms)[0m  SELECT  "scores".* FROM "scores" WHERE (score > 0) LIMIT 12
+Completed 200 OK in 7ms (Views: 2.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for ::1 at 2015-03-25 15:34:54 -0400
+Processing by RootController#show as HTML
+  Rendered root/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 101ms (Views: 100.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/root-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:34:54 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-25 15:34:54 -0400
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:34:54 -0400
+
+
+Started GET "/assets/application-2f635f4f24c84d436395d248d576e2e0.css?body=1" for ::1 at 2015-03-25 15:34:54 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-25 15:34:54 -0400
+
+
+Started GET "/assets/underscore-1.8.2-60baf2033ddf3a64f6cf47997d4e2924.js?body=1" for ::1 at 2015-03-25 15:34:54 -0400
+
+
+Started GET "/assets/root-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-25 15:34:54 -0400
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-25 15:34:54 -0400
+
+
+Started GET "/assets/snake-68066c0a1f692458d2a3947178591202.js?body=1" for ::1 at 2015-03-25 15:34:54 -0400
+
+
+Started GET "/assets/application-2f635f4f24c84d436395d248d576e2e0.css?body=1" for ::1 at 2015-03-25 15:34:56 -0400
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:34:56 -0400
+
+
+Started GET "/assets/root-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:34:56 -0400
+
+
+Started POST "/scores" for ::1 at 2015-03-25 15:35:04 -0400
+Processing by ScoresController#create as */*
+  Parameters: {"score"=>{"score"=>"0", "speed"=>"200", "name"=>"GUEST"}}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "scores" ("name", "speed", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "GUEST"], ["speed", 200], ["score", 0], ["created_at", "2015-03-25 19:35:04.604215"], ["updated_at", "2015-03-25 19:35:04.604215"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mScore Load (0.6ms)[0m  SELECT  "scores".* FROM "scores" WHERE (score > 0) LIMIT 12
+Completed 200 OK in 8ms (Views: 2.8ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/scores" for ::1 at 2015-03-25 15:35:18 -0400
+Processing by ScoresController#create as */*
+  Parameters: {"score"=>{"score"=>"0", "speed"=>"200", "name"=>"GUEST"}}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "scores" ("name", "speed", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "GUEST"], ["speed", 200], ["score", 0], ["created_at", "2015-03-25 19:35:18.703019"], ["updated_at", "2015-03-25 19:35:18.703019"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mScore Load (0.4ms)[0m  SELECT  "scores".* FROM "scores" WHERE (score > 0) LIMIT 12
+Completed 200 OK in 6ms (Views: 2.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2015-03-25 15:35:20 -0400
+Processing by RootController#show as HTML
+  Rendered root/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 122ms (Views: 122.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:35:20 -0400
+
+
+Started GET "/assets/snake-view-31f92c7fe7b8b787f6677c24495c08c7.js?body=1" for ::1 at 2015-03-25 15:35:20 -0400
+
+
+Started GET "/assets/root-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:35:20 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-25 15:35:20 -0400
+
+
+Started GET "/assets/application-2f635f4f24c84d436395d248d576e2e0.css?body=1" for ::1 at 2015-03-25 15:35:20 -0400
+
+
+Started GET "/assets/application-b760a06b7dcd70bb4fcc56fe54b782f1.js?body=1" for ::1 at 2015-03-25 15:35:20 -0400
+
+
+Started GET "/assets/underscore-1.8.2-60baf2033ddf3a64f6cf47997d4e2924.js?body=1" for ::1 at 2015-03-25 15:35:20 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-25 15:35:20 -0400
+
+
+Started GET "/assets/root-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-25 15:35:20 -0400
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-25 15:35:20 -0400
+
+
+Started GET "/assets/snake-68066c0a1f692458d2a3947178591202.js?body=1" for ::1 at 2015-03-25 15:35:20 -0400
+
+
+Started POST "/scores" for ::1 at 2015-03-25 15:35:25 -0400
+Processing by ScoresController#create as */*
+  Parameters: {"score"=>{"score"=>"0", "speed"=>"200", "name"=>"GUEST"}}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "scores" ("name", "speed", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "GUEST"], ["speed", 200], ["score", 0], ["created_at", "2015-03-25 19:35:25.465518"], ["updated_at", "2015-03-25 19:35:25.465518"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mScore Load (0.7ms)[0m  SELECT  "scores".* FROM "scores" WHERE (score > 0) LIMIT 12
+Completed 200 OK in 11ms (Views: 4.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:35:28 -0400
+
+
+Started GET "/assets/root-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:35:28 -0400
+
+
+Started GET "/assets/application-2f635f4f24c84d436395d248d576e2e0.css?body=1" for ::1 at 2015-03-25 15:35:28 -0400
+
+
+Started GET "/" for ::1 at 2015-03-25 15:35:37 -0400
+Processing by RootController#show as HTML
+  Rendered root/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 101ms (Views: 101.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/root-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:35:37 -0400
+
+
+Started GET "/assets/application-54271c128f318fc7e45d657f53c1bd0f.js?body=1" for ::1 at 2015-03-25 15:35:37 -0400
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:35:37 -0400
+
+
+Started GET "/assets/snake-view-72ece535eb2854a928746bc7cd0312fd.js?body=1" for ::1 at 2015-03-25 15:35:37 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-25 15:35:37 -0400
+
+
+Started GET "/assets/application-2f635f4f24c84d436395d248d576e2e0.css?body=1" for ::1 at 2015-03-25 15:35:37 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-25 15:35:37 -0400
+
+
+Started GET "/assets/underscore-1.8.2-60baf2033ddf3a64f6cf47997d4e2924.js?body=1" for ::1 at 2015-03-25 15:35:37 -0400
+
+
+Started GET "/assets/root-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-25 15:35:37 -0400
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-25 15:35:37 -0400
+
+
+Started GET "/assets/snake-68066c0a1f692458d2a3947178591202.js?body=1" for ::1 at 2015-03-25 15:35:37 -0400
+
+
+Started POST "/scores" for ::1 at 2015-03-25 15:35:41 -0400
+Processing by ScoresController#create as */*
+  Parameters: {"score"=>{"score"=>"0", "speed"=>"200", "name"=>"GUEST"}}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "scores" ("name", "speed", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "GUEST"], ["speed", 200], ["score", 0], ["created_at", "2015-03-25 19:35:41.708849"], ["updated_at", "2015-03-25 19:35:41.708849"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mScore Load (0.6ms)[0m  SELECT  "scores".* FROM "scores" WHERE (score > 0) LIMIT 12
+Completed 200 OK in 8ms (Views: 3.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2015-03-25 15:36:05 -0400
+Processing by RootController#show as HTML
+  Rendered root/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 105ms (Views: 104.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/root-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:36:05 -0400
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:36:05 -0400
+
+
+Started GET "/assets/snake-view-f6bfff6d4dd97127d95bd8cbc65cc207.js?body=1" for ::1 at 2015-03-25 15:36:06 -0400
+
+
+Started GET "/assets/application-2f635f4f24c84d436395d248d576e2e0.css?body=1" for ::1 at 2015-03-25 15:36:06 -0400
+
+
+Started GET "/assets/application-f2db1a26ef95f8e3b62600c341d677b5.js?body=1" for ::1 at 2015-03-25 15:36:06 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-25 15:36:06 -0400
+
+
+Started GET "/assets/underscore-1.8.2-60baf2033ddf3a64f6cf47997d4e2924.js?body=1" for ::1 at 2015-03-25 15:36:06 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-25 15:36:06 -0400
+
+
+Started GET "/assets/root-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-25 15:36:06 -0400
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-25 15:36:06 -0400
+
+
+Started GET "/assets/snake-68066c0a1f692458d2a3947178591202.js?body=1" for ::1 at 2015-03-25 15:36:06 -0400
+
+
+Started POST "/scores" for ::1 at 2015-03-25 15:36:11 -0400
+Processing by ScoresController#create as */*
+  Parameters: {"score"=>{"score"=>"0", "speed"=>"200", "name"=>"GUEST"}}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "scores" ("name", "speed", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "GUEST"], ["speed", 200], ["score", 0], ["created_at", "2015-03-25 19:36:11.045285"], ["updated_at", "2015-03-25 19:36:11.045285"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mScore Load (58.5ms)[0m  SELECT  "scores".* FROM "scores" WHERE (score > 0)  ORDER BY "scores"."score" DESC LIMIT 12
+Completed 200 OK in 76ms (Views: 4.0ms | ActiveRecord: 62.6ms)
+
+
+Started POST "/scores" for ::1 at 2015-03-25 15:36:41 -0400
+Processing by ScoresController#create as */*
+  Parameters: {"score"=>{"score"=>"1600", "speed"=>"50", "name"=>"GUEST"}}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "scores" ("name", "speed", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "GUEST"], ["speed", 50], ["score", 1600], ["created_at", "2015-03-25 19:36:41.798223"], ["updated_at", "2015-03-25 19:36:41.798223"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mScore Load (0.5ms)[0m  SELECT  "scores".* FROM "scores" WHERE (score > 0)  ORDER BY "scores"."score" DESC LIMIT 12
+Completed 200 OK in 7ms (Views: 3.0ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/scores" for ::1 at 2015-03-25 15:36:45 -0400
+Processing by ScoresController#create as */*
+  Parameters: {"score"=>{"score"=>"0", "speed"=>"50", "name"=>"GUEST"}}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "scores" ("name", "speed", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "GUEST"], ["speed", 50], ["score", 0], ["created_at", "2015-03-25 19:36:45.336121"], ["updated_at", "2015-03-25 19:36:45.336121"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mScore Load (0.4ms)[0m  SELECT  "scores".* FROM "scores" WHERE (score > 0)  ORDER BY "scores"."score" DESC LIMIT 12
+Completed 200 OK in 12ms (Views: 2.9ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/scores" for ::1 at 2015-03-25 15:37:04 -0400
+Processing by ScoresController#create as */*
+  Parameters: {"score"=>{"score"=>"2800", "speed"=>"50", "name"=>"GUEST"}}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "scores" ("name", "speed", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "GUEST"], ["speed", 50], ["score", 2800], ["created_at", "2015-03-25 19:37:04.515101"], ["updated_at", "2015-03-25 19:37:04.515101"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mScore Load (0.4ms)[0m  SELECT  "scores".* FROM "scores" WHERE (score > 0)  ORDER BY "scores"."score" DESC LIMIT 12
+Completed 200 OK in 6ms (Views: 2.7ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/scores" for ::1 at 2015-03-25 15:37:23 -0400
+Processing by ScoresController#create as */*
+  Parameters: {"score"=>{"score"=>"4000", "speed"=>"50", "name"=>"GUEST"}}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "scores" ("name", "speed", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "GUEST"], ["speed", 50], ["score", 4000], ["created_at", "2015-03-25 19:37:23.122937"], ["updated_at", "2015-03-25 19:37:23.122937"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mScore Load (0.5ms)[0m  SELECT  "scores".* FROM "scores" WHERE (score > 0)  ORDER BY "scores"."score" DESC LIMIT 12
+Completed 200 OK in 9ms (Views: 3.6ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/scores" for ::1 at 2015-03-25 15:37:28 -0400
+Processing by ScoresController#create as */*
+  Parameters: {"score"=>{"score"=>"0", "speed"=>"50", "name"=>"GUEST"}}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "scores" ("name", "speed", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "GUEST"], ["speed", 50], ["score", 0], ["created_at", "2015-03-25 19:37:28.045485"], ["updated_at", "2015-03-25 19:37:28.045485"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mScore Load (2.3ms)[0m  SELECT  "scores".* FROM "scores" WHERE (score > 0)  ORDER BY "scores"."score" DESC LIMIT 12
+Completed 200 OK in 20ms (Views: 6.4ms | ActiveRecord: 3.3ms)
+
+
+Started POST "/scores" for ::1 at 2015-03-25 15:37:36 -0400
+Processing by ScoresController#create as */*
+  Parameters: {"score"=>{"score"=>"1200", "speed"=>"50", "name"=>"GUEST"}}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "scores" ("name", "speed", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "GUEST"], ["speed", 50], ["score", 1200], ["created_at", "2015-03-25 19:37:36.649194"], ["updated_at", "2015-03-25 19:37:36.649194"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mScore Load (0.5ms)[0m  SELECT  "scores".* FROM "scores" WHERE (score > 0)  ORDER BY "scores"."score" DESC LIMIT 12
+Completed 200 OK in 9ms (Views: 5.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2015-03-25 15:39:57 -0400
+Processing by RootController#show as HTML
+  Rendered root/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 314ms (Views: 313.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/snake-view-664c6fc024dd5a43a285789cf92c6f8a.js?body=1" for ::1 at 2015-03-25 15:39:58 -0400
+
+
+Started GET "/assets/application-2f635f4f24c84d436395d248d576e2e0.css?body=1" for ::1 at 2015-03-25 15:39:58 -0400
+
+
+Started GET "/assets/root-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:39:58 -0400
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:39:58 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-25 15:39:58 -0400
+
+
+Started GET "/assets/underscore-1.8.2-60baf2033ddf3a64f6cf47997d4e2924.js?body=1" for ::1 at 2015-03-25 15:39:58 -0400
+
+
+Started GET "/assets/application-506ea2fefd99a1e3db69abd514a77a98.js?body=1" for ::1 at 2015-03-25 15:39:58 -0400
+
+
+Started GET "/assets/snake-68066c0a1f692458d2a3947178591202.js?body=1" for ::1 at 2015-03-25 15:39:58 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-25 15:39:58 -0400
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-25 15:39:58 -0400
+
+
+Started GET "/assets/root-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-25 15:39:58 -0400
+
+
+Started GET "/scores" for ::1 at 2015-03-25 15:39:59 -0400
+Processing by ScoresController#index as */*
+  [1m[36mScore Load (0.6ms)[0m  [1mSELECT  "scores".* FROM "scores" WHERE (score > 0)  ORDER BY "scores"."score" DESC LIMIT 12[0m
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/scores" for ::1 at 2015-03-25 15:40:07 -0400
+Processing by ScoresController#create as */*
+  Parameters: {"score"=>{"score"=>"100", "speed"=>"200", "name"=>"GUEST"}}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "scores" ("name", "speed", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "GUEST"], ["speed", 200], ["score", 100], ["created_at", "2015-03-25 19:40:07.331958"], ["updated_at", "2015-03-25 19:40:07.331958"]]
+  [1m[35m (83.6ms)[0m  COMMIT
+  [1m[36mScore Load (0.8ms)[0m  [1mSELECT  "scores".* FROM "scores" WHERE (score > 0)  ORDER BY "scores"."score" DESC LIMIT 12[0m
+Completed 200 OK in 92ms (Views: 4.2ms | ActiveRecord: 84.8ms)
+
+
+Started GET "/" for ::1 at 2015-03-25 15:41:33 -0400
+Processing by RootController#show as HTML
+  Rendered root/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 102ms (Views: 101.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/root-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:41:34 -0400
+
+
+Started GET "/assets/application-2f635f4f24c84d436395d248d576e2e0.css?body=1" for ::1 at 2015-03-25 15:41:34 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-25 15:41:34 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-25 15:41:34 -0400
+
+
+Started GET "/assets/application-692443900caa2515bbc0fef1deda5b45.js?body=1" for ::1 at 2015-03-25 15:41:34 -0400
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:41:34 -0400
+
+
+Started GET "/assets/snake-view-4cdcc554eb8b2a4a571fddf658d5746c.js?body=1" for ::1 at 2015-03-25 15:41:34 -0400
+
+
+Started GET "/assets/underscore-1.8.2-60baf2033ddf3a64f6cf47997d4e2924.js?body=1" for ::1 at 2015-03-25 15:41:34 -0400
+
+
+Started GET "/assets/root-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-25 15:41:34 -0400
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-25 15:41:34 -0400
+
+
+Started GET "/assets/snake-68066c0a1f692458d2a3947178591202.js?body=1" for ::1 at 2015-03-25 15:41:34 -0400
+
+
+Started GET "/" for ::1 at 2015-03-25 15:42:27 -0400
+Processing by RootController#show as HTML
+  Rendered root/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 62ms (Views: 61.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/root-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:42:28 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-25 15:42:28 -0400
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:42:28 -0400
+
+
+Started GET "/assets/underscore-1.8.2-60baf2033ddf3a64f6cf47997d4e2924.js?body=1" for ::1 at 2015-03-25 15:42:28 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-25 15:42:28 -0400
+
+
+Started GET "/assets/application-2f635f4f24c84d436395d248d576e2e0.css?body=1" for ::1 at 2015-03-25 15:42:28 -0400
+
+
+Started GET "/assets/root-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-25 15:42:28 -0400
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-25 15:42:28 -0400
+
+
+Started GET "/assets/snake-view-4cdcc554eb8b2a4a571fddf658d5746c.js?body=1" for ::1 at 2015-03-25 15:42:28 -0400
+
+
+Started GET "/assets/snake-68066c0a1f692458d2a3947178591202.js?body=1" for ::1 at 2015-03-25 15:42:28 -0400
+
+
+Started GET "/assets/application-692443900caa2515bbc0fef1deda5b45.js?body=1" for ::1 at 2015-03-25 15:42:28 -0400
+
+
+Started GET "/" for ::1 at 2015-03-25 15:42:30 -0400
+Processing by RootController#show as HTML
+  Rendered root/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 84ms (Views: 84.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:42:30 -0400
+
+
+Started GET "/assets/underscore-1.8.2-60baf2033ddf3a64f6cf47997d4e2924.js?body=1" for ::1 at 2015-03-25 15:42:30 -0400
+
+
+Started GET "/assets/root-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:42:30 -0400
+
+
+Started GET "/assets/application-2f635f4f24c84d436395d248d576e2e0.css?body=1" for ::1 at 2015-03-25 15:42:30 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-25 15:42:30 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-25 15:42:30 -0400
+
+
+Started GET "/assets/root-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-25 15:42:30 -0400
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-25 15:42:30 -0400
+
+
+Started GET "/assets/snake-view-4cdcc554eb8b2a4a571fddf658d5746c.js?body=1" for ::1 at 2015-03-25 15:42:30 -0400
+
+
+Started GET "/assets/snake-68066c0a1f692458d2a3947178591202.js?body=1" for ::1 at 2015-03-25 15:42:30 -0400
+
+
+Started GET "/assets/application-692443900caa2515bbc0fef1deda5b45.js?body=1" for ::1 at 2015-03-25 15:42:30 -0400
+
+
+Started GET "/" for ::1 at 2015-03-25 15:42:40 -0400
+Processing by RootController#show as HTML
+  Rendered root/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 86ms (Views: 86.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/root-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:42:41 -0400
+
+
+Started GET "/assets/application-2f635f4f24c84d436395d248d576e2e0.css?body=1" for ::1 at 2015-03-25 15:42:41 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-25 15:42:41 -0400
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:42:41 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-25 15:42:41 -0400
+
+
+Started GET "/assets/underscore-1.8.2-60baf2033ddf3a64f6cf47997d4e2924.js?body=1" for ::1 at 2015-03-25 15:42:41 -0400
+
+
+Started GET "/assets/root-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-25 15:42:41 -0400
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-25 15:42:41 -0400
+
+
+Started GET "/assets/snake-view-4cdcc554eb8b2a4a571fddf658d5746c.js?body=1" for ::1 at 2015-03-25 15:42:41 -0400
+
+
+Started GET "/assets/application-692443900caa2515bbc0fef1deda5b45.js?body=1" for ::1 at 2015-03-25 15:42:41 -0400
+
+
+Started GET "/assets/snake-68066c0a1f692458d2a3947178591202.js?body=1" for ::1 at 2015-03-25 15:42:41 -0400
+
+
+Started GET "/" for ::1 at 2015-03-25 15:42:56 -0400
+Processing by RootController#show as HTML
+  Rendered root/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 71ms (Views: 70.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:42:56 -0400
+
+
+Started GET "/assets/underscore-1.8.2-60baf2033ddf3a64f6cf47997d4e2924.js?body=1" for ::1 at 2015-03-25 15:42:56 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-25 15:42:56 -0400
+
+
+Started GET "/assets/root-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:42:56 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-25 15:42:56 -0400
+
+
+Started GET "/assets/application-2f635f4f24c84d436395d248d576e2e0.css?body=1" for ::1 at 2015-03-25 15:42:56 -0400
+
+
+Started GET "/assets/root-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-25 15:42:56 -0400
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-25 15:42:56 -0400
+
+
+Started GET "/assets/snake-view-4cdcc554eb8b2a4a571fddf658d5746c.js?body=1" for ::1 at 2015-03-25 15:42:56 -0400
+
+
+Started GET "/assets/snake-68066c0a1f692458d2a3947178591202.js?body=1" for ::1 at 2015-03-25 15:42:56 -0400
+
+
+Started GET "/assets/application-692443900caa2515bbc0fef1deda5b45.js?body=1" for ::1 at 2015-03-25 15:42:56 -0400
+
+
+Started GET "/" for ::1 at 2015-03-25 15:43:11 -0400
+Processing by RootController#show as HTML
+  Rendered root/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 65ms (Views: 65.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/root-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:43:11 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-25 15:43:11 -0400
+
+
+Started GET "/assets/underscore-1.8.2-60baf2033ddf3a64f6cf47997d4e2924.js?body=1" for ::1 at 2015-03-25 15:43:11 -0400
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:43:11 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-25 15:43:11 -0400
+
+
+Started GET "/assets/application-2f635f4f24c84d436395d248d576e2e0.css?body=1" for ::1 at 2015-03-25 15:43:11 -0400
+
+
+Started GET "/assets/root-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-25 15:43:11 -0400
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-25 15:43:11 -0400
+
+
+Started GET "/assets/snake-view-4cdcc554eb8b2a4a571fddf658d5746c.js?body=1" for ::1 at 2015-03-25 15:43:11 -0400
+
+
+Started GET "/assets/snake-68066c0a1f692458d2a3947178591202.js?body=1" for ::1 at 2015-03-25 15:43:11 -0400
+
+
+Started GET "/assets/application-692443900caa2515bbc0fef1deda5b45.js?body=1" for ::1 at 2015-03-25 15:43:11 -0400
+
+
+Started GET "/scores" for ::1 at 2015-03-25 15:43:11 -0400
+Processing by ScoresController#index as */*
+  [1m[35mScore Load (0.8ms)[0m  SELECT  "scores".* FROM "scores" WHERE (score > 0)  ORDER BY "scores"."score" DESC LIMIT 12
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2015-03-25 15:43:23 -0400
+Processing by RootController#show as HTML
+  Rendered root/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 81ms (Views: 81.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/root-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:43:23 -0400
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:43:23 -0400
+
+
+Started GET "/assets/application-2f635f4f24c84d436395d248d576e2e0.css?body=1" for ::1 at 2015-03-25 15:43:23 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-25 15:43:23 -0400
+
+
+Started GET "/assets/underscore-1.8.2-60baf2033ddf3a64f6cf47997d4e2924.js?body=1" for ::1 at 2015-03-25 15:43:23 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-25 15:43:23 -0400
+
+
+Started GET "/assets/root-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-25 15:43:23 -0400
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-25 15:43:23 -0400
+
+
+Started GET "/assets/snake-view-4cdcc554eb8b2a4a571fddf658d5746c.js?body=1" for ::1 at 2015-03-25 15:43:23 -0400
+
+
+Started GET "/assets/snake-68066c0a1f692458d2a3947178591202.js?body=1" for ::1 at 2015-03-25 15:43:23 -0400
+
+
+Started GET "/assets/application-692443900caa2515bbc0fef1deda5b45.js?body=1" for ::1 at 2015-03-25 15:43:23 -0400
+
+
+Started GET "/scores" for ::1 at 2015-03-25 15:43:23 -0400
+Processing by ScoresController#index as */*
+  [1m[36mScore Load (0.6ms)[0m  [1mSELECT  "scores".* FROM "scores" WHERE (score > 0)  ORDER BY "scores"."score" DESC LIMIT 12[0m
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2015-03-25 15:43:45 -0400
+Processing by RootController#show as HTML
+  Rendered root/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 257ms (Views: 257.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/root-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:43:46 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-25 15:43:46 -0400
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:43:46 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-25 15:43:46 -0400
+
+
+Started GET "/assets/application-2f635f4f24c84d436395d248d576e2e0.css?body=1" for ::1 at 2015-03-25 15:43:46 -0400
+
+
+Started GET "/assets/snake-view-126fb8dc2ab8e0558ddf8dc8723eae62.js?body=1" for ::1 at 2015-03-25 15:43:46 -0400
+
+
+Started GET "/assets/application-39334271445a6e49ef955a3a46a82c1e.js?body=1" for ::1 at 2015-03-25 15:43:46 -0400
+
+
+Started GET "/assets/underscore-1.8.2-60baf2033ddf3a64f6cf47997d4e2924.js?body=1" for ::1 at 2015-03-25 15:43:46 -0400
+
+
+Started GET "/assets/root-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-25 15:43:46 -0400
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-25 15:43:46 -0400
+
+
+Started GET "/assets/snake-68066c0a1f692458d2a3947178591202.js?body=1" for ::1 at 2015-03-25 15:43:46 -0400
+
+
+Started GET "/scores" for ::1 at 2015-03-25 15:43:46 -0400
+Processing by ScoresController#index as */*
+  [1m[35mScore Load (1.0ms)[0m  SELECT  "scores".* FROM "scores" WHERE (score > 0)  ORDER BY "scores"."score" DESC LIMIT 12
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 1.0ms)
+  [1m[36mSQL (57.8ms)[0m  [1mDELETE FROM "scores"[0m
+
+
+Started GET "/" for ::1 at 2015-03-25 15:44:09 -0400
+Processing by RootController#show as HTML
+  Rendered root/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 112ms (Views: 111.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-25 15:44:10 -0400
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:44:10 -0400
+
+
+Started GET "/assets/root-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:44:10 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-25 15:44:10 -0400
+
+
+Started GET "/assets/application-2f635f4f24c84d436395d248d576e2e0.css?body=1" for ::1 at 2015-03-25 15:44:10 -0400
+
+
+Started GET "/assets/root-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-25 15:44:10 -0400
+
+
+Started GET "/assets/snake-68066c0a1f692458d2a3947178591202.js?body=1" for ::1 at 2015-03-25 15:44:10 -0400
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-25 15:44:10 -0400
+
+
+Started GET "/assets/underscore-1.8.2-60baf2033ddf3a64f6cf47997d4e2924.js?body=1" for ::1 at 2015-03-25 15:44:10 -0400
+
+
+Started GET "/assets/application-39334271445a6e49ef955a3a46a82c1e.js?body=1" for ::1 at 2015-03-25 15:44:10 -0400
+
+
+Started GET "/assets/snake-view-126fb8dc2ab8e0558ddf8dc8723eae62.js?body=1" for ::1 at 2015-03-25 15:44:10 -0400
+
+
+Started GET "/scores" for ::1 at 2015-03-25 15:44:10 -0400
+Processing by ScoresController#index as */*
+  [1m[36mScore Load (0.5ms)[0m  [1mSELECT  "scores".* FROM "scores" WHERE (score > 0)  ORDER BY "scores"."score" DESC LIMIT 12[0m
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2015-03-25 15:45:46 -0400
+Processing by RootController#show as HTML
+  Rendered root/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 235ms (Views: 235.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/root-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:45:46 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-25 15:45:46 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-25 15:45:46 -0400
+
+
+Started GET "/assets/application-2f635f4f24c84d436395d248d576e2e0.css?body=1" for ::1 at 2015-03-25 15:45:46 -0400
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:45:46 -0400
+
+
+Started GET "/assets/underscore-1.8.2-60baf2033ddf3a64f6cf47997d4e2924.js?body=1" for ::1 at 2015-03-25 15:45:46 -0400
+
+
+Started GET "/assets/snake-view-fa3537736059f6a2db4eb6af69c8adb7.js?body=1" for ::1 at 2015-03-25 15:45:46 -0400
+
+
+Started GET "/assets/root-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-25 15:45:46 -0400
+
+
+Started GET "/assets/application-693e0ce630fcfa15e797d327e7e4a732.js?body=1" for ::1 at 2015-03-25 15:45:46 -0400
+
+
+Started GET "/assets/snake-68066c0a1f692458d2a3947178591202.js?body=1" for ::1 at 2015-03-25 15:45:46 -0400
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-25 15:45:46 -0400
+
+
+Started GET "/scores" for ::1 at 2015-03-25 15:45:46 -0400
+Processing by ScoresController#index as */*
+  [1m[35mScore Load (0.9ms)[0m  SELECT  "scores".* FROM "scores" WHERE (score > 0)  ORDER BY "scores"."score" DESC LIMIT 12
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2015-03-25 15:45:48 -0400
+Processing by RootController#show as HTML
+  Rendered root/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 65ms (Views: 64.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/root-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:45:48 -0400
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:45:48 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-25 15:45:48 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-25 15:45:48 -0400
+
+
+Started GET "/assets/underscore-1.8.2-60baf2033ddf3a64f6cf47997d4e2924.js?body=1" for ::1 at 2015-03-25 15:45:48 -0400
+
+
+Started GET "/assets/application-2f635f4f24c84d436395d248d576e2e0.css?body=1" for ::1 at 2015-03-25 15:45:48 -0400
+
+
+Started GET "/assets/root-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-25 15:45:48 -0400
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-25 15:45:48 -0400
+
+
+Started GET "/assets/snake-view-fa3537736059f6a2db4eb6af69c8adb7.js?body=1" for ::1 at 2015-03-25 15:45:48 -0400
+
+
+Started GET "/assets/snake-68066c0a1f692458d2a3947178591202.js?body=1" for ::1 at 2015-03-25 15:45:48 -0400
+
+
+Started GET "/assets/application-693e0ce630fcfa15e797d327e7e4a732.js?body=1" for ::1 at 2015-03-25 15:45:48 -0400
+
+
+Started GET "/scores" for ::1 at 2015-03-25 15:45:48 -0400
+Processing by ScoresController#index as */*
+  [1m[36mScore Load (0.6ms)[0m  [1mSELECT  "scores".* FROM "scores" WHERE (score > 0)  ORDER BY "scores"."score" DESC LIMIT 12[0m
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2015-03-25 15:45:53 -0400
+Processing by RootController#show as HTML
+  Rendered root/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 74ms (Views: 73.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/root-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:45:53 -0400
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:45:53 -0400
+
+
+Started GET "/assets/application-2f635f4f24c84d436395d248d576e2e0.css?body=1" for ::1 at 2015-03-25 15:45:53 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-25 15:45:53 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-25 15:45:53 -0400
+
+
+Started GET "/assets/underscore-1.8.2-60baf2033ddf3a64f6cf47997d4e2924.js?body=1" for ::1 at 2015-03-25 15:45:53 -0400
+
+
+Started GET "/assets/root-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-25 15:45:53 -0400
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-25 15:45:53 -0400
+
+
+Started GET "/assets/application-693e0ce630fcfa15e797d327e7e4a732.js?body=1" for ::1 at 2015-03-25 15:45:53 -0400
+
+
+Started GET "/assets/snake-view-fa3537736059f6a2db4eb6af69c8adb7.js?body=1" for ::1 at 2015-03-25 15:45:53 -0400
+
+
+Started GET "/assets/snake-68066c0a1f692458d2a3947178591202.js?body=1" for ::1 at 2015-03-25 15:45:53 -0400
+
+
+Started GET "/scores" for ::1 at 2015-03-25 15:45:54 -0400
+Processing by ScoresController#index as */*
+  [1m[35mScore Load (0.8ms)[0m  SELECT  "scores".* FROM "scores" WHERE (score > 0)  ORDER BY "scores"."score" DESC LIMIT 12
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/scores" for ::1 at 2015-03-25 15:45:58 -0400
+Processing by ScoresController#create as */*
+  Parameters: {"score"=>{"score"=>"100", "speed"=>"200", "name"=>"GUEST"}}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "scores" ("name", "speed", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "GUEST"], ["speed", 200], ["score", 100], ["created_at", "2015-03-25 19:45:58.687955"], ["updated_at", "2015-03-25 19:45:58.687955"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mScore Load (0.5ms)[0m  SELECT  "scores".* FROM "scores" WHERE (score > 0)  ORDER BY "scores"."score" DESC LIMIT 12
+Completed 200 OK in 5ms (Views: 1.0ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/scores" for ::1 at 2015-03-25 15:46:03 -0400
+Processing by ScoresController#create as */*
+  Parameters: {"score"=>{"score"=>"0", "speed"=>"200", "name"=>"GUEST"}}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "scores" ("name", "speed", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "GUEST"], ["speed", 200], ["score", 0], ["created_at", "2015-03-25 19:46:03.830839"], ["updated_at", "2015-03-25 19:46:03.830839"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mScore Load (0.4ms)[0m  SELECT  "scores".* FROM "scores" WHERE (score > 0)  ORDER BY "scores"."score" DESC LIMIT 12
+Completed 200 OK in 5ms (Views: 1.0ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/scores" for ::1 at 2015-03-25 15:46:10 -0400
+Processing by ScoresController#create as */*
+  Parameters: {"score"=>{"score"=>"0", "speed"=>"200", "name"=>"GUEST"}}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "scores" ("name", "speed", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "GUEST"], ["speed", 200], ["score", 0], ["created_at", "2015-03-25 19:46:10.375525"], ["updated_at", "2015-03-25 19:46:10.375525"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mScore Load (0.6ms)[0m  SELECT  "scores".* FROM "scores" WHERE (score > 0)  ORDER BY "scores"."score" DESC LIMIT 12
+Completed 200 OK in 6ms (Views: 1.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2015-03-25 15:46:44 -0400
+Processing by RootController#show as HTML
+  Rendered root/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 100ms (Views: 100.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/root-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:46:44 -0400
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:46:44 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-25 15:46:44 -0400
+
+
+Started GET "/assets/application-2f635f4f24c84d436395d248d576e2e0.css?body=1" for ::1 at 2015-03-25 15:46:44 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-25 15:46:44 -0400
+
+
+Started GET "/assets/root-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-25 15:46:44 -0400
+
+
+Started GET "/assets/underscore-1.8.2-60baf2033ddf3a64f6cf47997d4e2924.js?body=1" for ::1 at 2015-03-25 15:46:44 -0400
+
+
+Started GET "/assets/snake-view-50ce8cd39bb04d5b103ecbcef72ec386.js?body=1" for ::1 at 2015-03-25 15:46:44 -0400
+
+
+Started GET "/assets/application-d753d7c74afb8e2998b34140ed87c603.js?body=1" for ::1 at 2015-03-25 15:46:44 -0400
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-25 15:46:44 -0400
+
+
+Started GET "/assets/snake-68066c0a1f692458d2a3947178591202.js?body=1" for ::1 at 2015-03-25 15:46:44 -0400
+
+
+Started GET "/scores" for ::1 at 2015-03-25 15:46:44 -0400
+Processing by ScoresController#index as */*
+  [1m[36mScore Load (0.5ms)[0m  [1mSELECT  "scores".* FROM "scores" WHERE (score > 0)  ORDER BY "scores"."score" DESC LIMIT 12[0m
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/scores" for ::1 at 2015-03-25 15:46:54 -0400
+Processing by ScoresController#create as */*
+  Parameters: {"score"=>{"score"=>"200", "speed"=>"200", "name"=>"GUEST"}}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "scores" ("name", "speed", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "GUEST"], ["speed", 200], ["score", 200], ["created_at", "2015-03-25 19:46:54.806313"], ["updated_at", "2015-03-25 19:46:54.806313"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mScore Load (0.5ms)[0m  [1mSELECT  "scores".* FROM "scores" WHERE (score > 0)  ORDER BY "scores"."score" DESC LIMIT 12[0m
+Completed 200 OK in 5ms (Views: 1.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2015-03-25 15:54:01 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RootController#show as HTML
+  Rendered root/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 456ms (Views: 455.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application-689e7e1710271c624729429b81263256.js?body=1" for ::1 at 2015-03-25 15:54:02 -0400
+
+
+Started GET "/assets/snake-view-8d16ca777f8ce539a9e8e64de36e11e4.js?body=1" for ::1 at 2015-03-25 15:54:02 -0400
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:54:02 -0400
+
+
+Started GET "/assets/root-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 15:54:02 -0400
+
+
+Started GET "/assets/underscore-1.8.2-60baf2033ddf3a64f6cf47997d4e2924.js?body=1" for ::1 at 2015-03-25 15:54:02 -0400
+
+
+Started GET "/assets/application-2f635f4f24c84d436395d248d576e2e0.css?body=1" for ::1 at 2015-03-25 15:54:02 -0400
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-25 15:54:02 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-25 15:54:02 -0400
+
+
+Started GET "/assets/root-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-25 15:54:02 -0400
+
+
+Started GET "/assets/snake-68066c0a1f692458d2a3947178591202.js?body=1" for ::1 at 2015-03-25 15:54:02 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-25 15:54:02 -0400
+
+
+Started GET "/scores" for ::1 at 2015-03-25 15:54:03 -0400
+Processing by ScoresController#index as */*
+  [1m[35mScore Load (28.4ms)[0m  SELECT  "scores".* FROM "scores" WHERE (score > 0)  ORDER BY "scores"."score" DESC LIMIT 12
+Completed 200 OK in 77ms (Views: 34.5ms | ActiveRecord: 33.9ms)
+
+
+Started POST "/scores" for ::1 at 2015-03-25 15:54:25 -0400
+Processing by ScoresController#create as */*
+  Parameters: {"score"=>{"score"=>"2400", "speed"=>"50", "name"=>"GUEST"}}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (39.0ms)[0m  INSERT INTO "scores" ("name", "speed", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "GUEST"], ["speed", 50], ["score", 2400], ["created_at", "2015-03-25 19:54:25.138765"], ["updated_at", "2015-03-25 19:54:25.138765"]]
+  [1m[36m (9.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mScore Load (0.6ms)[0m  SELECT  "scores".* FROM "scores" WHERE (score > 0)  ORDER BY "scores"."score" DESC LIMIT 12
+Completed 200 OK in 70ms (Views: 2.3ms | ActiveRecord: 49.8ms)
