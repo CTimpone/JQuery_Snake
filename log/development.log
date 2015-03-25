@@ -1558,3 +1558,51 @@ Processing by ScoresController#create as */*
   [1m[36m (9.6ms)[0m  [1mCOMMIT[0m
   [1m[35mScore Load (0.6ms)[0m  SELECT  "scores".* FROM "scores" WHERE (score > 0)  ORDER BY "scores"."score" DESC LIMIT 12
 Completed 200 OK in 70ms (Views: 2.3ms | ActiveRecord: 49.8ms)
+
+
+Started GET "/" for ::1 at 2015-03-25 16:02:45 -0400
+Processing by RootController#show as HTML
+  Rendered root/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 98ms (Views: 97.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/root-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 16:02:45 -0400
+
+
+Started GET "/assets/underscore-1.8.2-60baf2033ddf3a64f6cf47997d4e2924.js?body=1" for ::1 at 2015-03-25 16:02:45 -0400
+
+
+Started GET "/assets/snake-68066c0a1f692458d2a3947178591202.js?body=1" for ::1 at 2015-03-25 16:02:45 -0400
+
+
+Started GET "/assets/application-2f635f4f24c84d436395d248d576e2e0.css?body=1" for ::1 at 2015-03-25 16:02:45 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-25 16:02:45 -0400
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 16:02:45 -0400
+
+
+Started GET "/assets/root-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-25 16:02:45 -0400
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-25 16:02:45 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-25 16:02:45 -0400
+
+
+Started GET "/scores" for ::1 at 2015-03-25 16:02:46 -0400
+Processing by ScoresController#index as */*
+  [1m[36mScore Load (0.6ms)[0m  [1mSELECT  "scores".* FROM "scores" WHERE (score > 0)  ORDER BY "scores"."score" DESC LIMIT 12[0m
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application-2f635f4f24c84d436395d248d576e2e0.css?body=1" for ::1 at 2015-03-25 16:02:50 -0400
+
+
+Started GET "/assets/root-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 16:02:50 -0400
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-25 16:02:50 -0400
