@@ -67,15 +67,19 @@
             break;
           }
         case 37:
+        case 65:
           dir = 'W';
           break;
         case 38:
+        case 87:
           dir = 'N';
           break;
         case 39:
+        case 68:
           dir = 'E';
           break;
         case 40:
+        case 83:
           dir = 'S';
           break;
         default:
