@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
- 
+
  /*RESET AND CLEARFIX */
 
  body, ul, li, h1 {
@@ -97,11 +97,12 @@
 
  .top-scores table {
    width: 100%;
-   outline: thin solid black;
  }
 
  .top-scores tr {
+   display: block;
    outline: thin solid black;
+   width: 100%;
  }
 
  .top-scores td {
