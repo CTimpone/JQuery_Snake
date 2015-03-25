@@ -1,0 +1,65 @@
+<div class="head-info group">
+  <h1 class="title">Snake</h1>
+  <h1 class="points">000000</h1>
+</div>
+
+<div class="grid-and-scores group">
+  <section id="primary">
+    <div class="fake-grid">
+    </div>
+  </section>
+  <aside class="top-scores">
+    <h1>High Scores</h1>
+    <table>
+      <tr class="table-headers">
+        <th>
+          Score
+        </th>
+        <th>
+          Speed
+        </th>
+      </tr>
+    </table>
+  </aside>
+</div>
+
+
+<section class="container group">
+  <label>
+    Speed
+    <input class="speed-select" type="number"value="200">
+  </label>
+
+  <label>
+    Name
+    <input class="username" type="text">
+  </label>
+  <button class="start">Start Game</button>
+</section>
+<footer>
+<p>
+  <strong>Instructions:</strong> Use the arrow keys to move.  Hit spacebar to
+  pause the game.  Adjust the selector to change the speed of the game (and
+  the points from each apple).  A lower value is faster.  Good luck!
+</p>
+
+</footer>
+<script>
+window.SnakeGame.Scores = [];
+
+$('.start').on("click", function () {
+  delete window.Snakes
+  $('#primary').empty();
+  var $button = $(event.currentTarget);
+
+  $button.html("New Game");
+  $button.prop("disabled", true);
+
+  window.Snakes = new window.SnakeGame.View(
+    $("#primary"),
+    $(".points"),
+    $(".speed-select").val(),
+    $(".username").val()
+  );
+});
+</script>

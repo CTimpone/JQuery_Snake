@@ -22,7 +22,7 @@
       if (!view.step()) {
         view.generateTopScores();
         $('body').off();
-
+        console.log('test');
         clearInterval(view.loop);
       }
     };
