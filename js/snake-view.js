@@ -101,7 +101,7 @@
       var test = this.board.grid[next[1]][next[0]];
       if (test === "a") {
         this.board.snake.eatApple(next);
-        this.board.points += 100 * (200 / this.speed);
+        this.board.points += Math.floor(100 *(200 / this.speed));
         this.$pointDisplay.html(this.prettyPoints(this.board.points));
         this.board.apples = [];
       } else {
