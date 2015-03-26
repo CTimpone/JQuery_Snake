@@ -28,6 +28,8 @@
     this.paused = false;
 
     var callback = function () {
+      view.board.snake.prevDir = view.board.snake.dir;
+
       if (!view.step()) {
         view.generateTopScores();
         $('body').off();
@@ -46,8 +48,7 @@
     var view = this;
 
     $('body').on("keydown", function (event) {
-      var dir = false
-
+      var dir = false;
       switch (event.keyCode) {
         case 32:
           if (!view.paused) {
@@ -57,6 +58,8 @@
           } else {
             view.paused = false;
             view.loop = setInterval(function () {
+              view.board.snake.prevDir = view.board.snake.dir;
+
               if (!view.step()) {
                 view.generateTopScores();
                 $('body').off();

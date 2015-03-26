@@ -5,9 +5,12 @@
 
   var Snake = window.SnakeGame.Snake = function () {
     this.dir = "N";
+    this.prevDir = "N ";
+
     var head = [Math.floor(SnakeGame.Board.DIM / 2), Math.floor(SnakeGame.Board.DIM / 2)]
     this.segments = [head, [head[0], head[1] + 1], [head[0], head[1] + 2],
                     [head[0], head[1] + 3], [head[0], head[1] + 4]];
+
   };
 
   Snake.prototype.move = function (next) {
@@ -51,7 +54,7 @@
 
   Snake.prototype.turn = function (direction) {
     var idx = Snake.OPPS.indexOf(direction)
-    var jdx = Snake.DIRS.indexOf(this.dir)
+    var jdx = Snake.DIRS.indexOf(this.prevDir)
     if (idx !== jdx) {
       this.dir = direction;
     }
