@@ -102,7 +102,8 @@
       snake.addClass('dead');
       snake.removeClass('.snake');
 
-      alert("Game Over.");
+      $(".game-overlay").css("display", "block");
+      $(".game-overlay strong").html(this.board.points);
 
       var data = {
         score: this.board.points,
@@ -128,7 +129,7 @@
       var test = this.board.grid[next[1]][next[0]];
       if (test === "a") {
         this.board.snake.eatApple(next);
-        this.board.points += Math.floor(100 *(200 / this.speed));
+        this.board.points += Math.floor(100 *(100 / this.speed));
         this.$pointDisplay.html(this.prettyPoints(this.board.points));
         this.board.apples = [];
       } else {

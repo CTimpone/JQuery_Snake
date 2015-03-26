@@ -69,7 +69,9 @@
  .grid-and-scores {
    width: 552px;
    margin: auto;
+   position: relative;
  }
+
  .fake-grid {
    float: left;
    border: 2px solid #000;
@@ -185,11 +187,33 @@
  }
 
  .speed-select {
-   width: 75px;
+   margin: auto;
+   display: inline-block;
+   width: 150px;
+   font-size: 24px;
  }
+
 
  .username {
    width: 151px;
+ }
+
+ .game-overlay {
+   position: absolute;
+   background: red;
+   width: 400px;
+   top: 132px;
+   font-size: 36px;
+   text-align: center;
+   padding: 50px 0;
+   font-weight: 700;
+   text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+   display: none;
+ }
+
+ .game-overlay p{
+   font-size: 24px;
+   margin: 0;
  }
 
  footer {

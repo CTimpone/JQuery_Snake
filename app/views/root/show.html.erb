@@ -21,13 +21,23 @@
       </tr>
     </table>
   </aside>
+  <div class="game-overlay">
+    Game Over
+    <p>
+      You scored <strong></strong> points.
+    </p>
+  </div>
 </div>
 
 
 <section class="container group">
   <label>
-    Speed
-    <input class="speed-select" type="number"value="200">
+    <select class="speed-select">
+      <option value="200">Easy</option>
+      <option value="100" selected>Normal</option>
+      <option value="50">Hard</option>
+      <option value="25">Impossible</option>
+    </select>
   </label>
 
   <label>
@@ -40,7 +50,7 @@
 <p>
   <strong>Instructions:</strong> Use the arrow keys to move.  Hit spacebar to
   pause the game.  Adjust the selector to change the speed of the game (and
-  the points from each apple).  A lower value is faster.  Good luck!
+  the points from each apple).  Good luck!
 </p>
 
 </footer>
@@ -55,7 +65,8 @@ $.ajax({
 });
 
 $('.start').on("click", function () {
-  delete window.Snakes
+  $(".game-overlay").css("display", "none");
+
   $('#primary').empty();
   var $button = $(event.currentTarget);
 
