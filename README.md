@@ -1,4 +1,4 @@
-# JQuery_Snake
+# <a href="http://www.online-snake-game.com">JQuery_Snake</a>
 
 A reproduction of the classic and timeless game of Snake.  Currently, the repo must be downloaded and then the index html file used to access the game, but a Heroku link is forthcoming.
 
